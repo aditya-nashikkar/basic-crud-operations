@@ -153,6 +153,13 @@
       "category": "Vegetables",
       "status": "Unavailable",
       "imgUrl": "https://images.pexels.com/photos/633480/pexels-photo-633480.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 27,
+      "name": "Pear",
+      "category": "Fruits",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/175767/pexels-photo-175767.jpeg?auto=compress&cs=tinysrgb&h=350"
     }
   ]
 }
