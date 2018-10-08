@@ -51,15 +51,15 @@ export class OperationsComponent implements OnInit {
       this.isExist = false;
     } 
     
-    if(product.type === '' || product.type == null || product.type == ' ') {
+    else if(product.type === '' || product.type == null || product.type == ' ') {
       this.isValidCategory = false;
     }
 
-    if(product.status === undefined) {
+    else if(product.status === undefined) {
       this.isValidStatus = false;
     }
 
-    if(product.imageUrl === '' || product.imageUrl == null || product.imageUrl == ' ') {
+    else if(product.imageUrl === '' || product.imageUrl == null || product.imageUrl == ' ') {
       this.isValidImgUrl = false;
     }
     
