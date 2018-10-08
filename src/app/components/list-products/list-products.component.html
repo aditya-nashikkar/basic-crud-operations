@@ -1,0 +1,119 @@
+<header>Admin Portal</header>
+<div class="container"><br>
+    <div>
+        <input 
+            #query
+            (keyup)="filter(query.value)"
+            type="text" 
+            class="form-control" 
+            placeholder="Search"
+            style="width: 200px;">
+
+        <span [routerLink]="['add-new-product']"
+            style="float: right;   
+                   margin-bottom: 10px; 
+                   cursor: pointer;">
+            <i title="Add new Products" class="fa fa-plus-circle" style="font-size: 32px;"></i>
+        </span>
+    </div><br>
+
+    <div class="table-responsive" *ngIf="filteredProducts!=0; else tableWithNoData" style="height: 444px; max-height: 444px; min-height: 444px;">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="cursor: pointer;" (click)="sortByName()">
+                        Name &nbsp;&nbsp;<span><i [ngClass]="sortIconName"></i></span>
+                    </th>
+                    <th style="cursor: pointer;" (click)="sortByCategory()">
+                        Category &nbsp;&nbsp;<span><i [ngClass]="sortIconCategory"></i></span>
+                    </th>
+                    <th style="cursor: pointer;" (click)="sortByStatus()">
+                        Status &nbsp;&nbsp;<span><i [ngClass]="sortIconStatus"></i></span>
+                    </th>
+                    <th>Image</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of filteredProducts">
+                    <td>{{p.name}}</td>
+                    <td>{{p.category}}</td>
+                    <td>
+                        <span [ngClass]="{'dot-avaialable': p.status=='Available', 'dot-unavaialable': p.status=='Unavailable'}"></span>
+                        {{p.status}}
+                    </td>
+                    <td>
+                        <img [src]="p.imgUrl" style="height: 60px; width: 60px; border-radius: 50%;">
+                    </td>
+                    <td>
+                        <i [routerLink]="['update-product', p.id]"
+                            class="fa fa-pencil" style="padding: 10px; cursor: pointer;"></i>
+                        <i (click)="deleteProduct(p)" 
+                            class="fa fa-trash" style="padding: 10px; cursor: pointer;"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <ng-template #tableWithNoData>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Image</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td [colSpan]=5>No data found</td>
+                </tr>
+            </tbody>
+        </table>        
+
+    </ng-template>
+
+    <div class="col-md-12 text-right" *ngIf="!isFilterOn;">
+        <ul class="pagination pagination-sm" style="cursor: pointer;">
+            <li [ngClass]="{'disabled': page==1}">
+                <a
+                    (click)="setFirstPageIndex()" 
+                >
+                    <i class="fa fa-step-backward"></i>
+                </a>
+            </li>
+            <li [ngClass]="{'disabled': page==1}">
+                <a
+                (click)="setPrevPageIndex()"  
+                >
+                    <i class="fa fa-backward"></i>
+                </a>
+            </li>
+            <li *ngFor="let allProduct of allProductsLength; let i = index"
+                [ngClass]="{'active': i == page-1}">
+                <a (click)="setCurrentPageIndex(i+1)">
+                    <i>{{ i+1 }}</i>
+                </a>
+            </li>
+            <li
+                [ngClass]="{'disabled': page==totalPagination}"
+                >
+                <a
+                    (click)="setNextPageIndex()"
+                    >
+                    <i class="fa fa-forward"></i>
+                </a>
+            </li>
+            <li [ngClass]="{'disabled': page==totalPagination}">
+                <a
+                    (click)="setLastPageIndex()"
+                >
+                    <i class="fa fa-step-forward"></i>
+                </a>
+            </li>
+        </ul> 
+    </div>
+</div>

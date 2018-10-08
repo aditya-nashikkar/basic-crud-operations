@@ -1,0 +1,65 @@
+<header style="text-align: center;">
+  <i [routerLink]="['/']" 
+    class="fa fa-arrow-circle-left" 
+    style="cursor: pointer; margin-left: 10px; margin-right: 5px; float: left; line-height: inherit"></i>
+    
+      <span>
+          Update Product
+      </span>
+  
+</header>
+<div class="container"><br>
+  
+  <form id="formNewProduct" 
+    name="formNewProduct" 
+    #productData="ngForm"  
+    (ngSubmit)="processFormUpdate(productData.value)">
+    
+    <div class="col-md-6"><br>
+      <div class="panel panel-default" style="height: auto;">
+        <div class="panel-heading text-center" style="background-color:#ffffff; color: #000000;">
+          {{data.name}}
+        </div>
+        <div class="panel-body text-center">
+            <img [src]="data.imgUrl" 
+              alt="No image found"
+              style="width: 100%;height: auto;">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6"><br>
+      <div class="panel panel-default" style="border: 0;">
+        <div class="panel-heading text-center" style="background-color:#ffffff; border: 0;">
+          Product Details
+        </div>
+        <div class="panel-body">
+            <p [hidden]="!isExist" style="color: #a94442; text-align: center;">This product already exist in database.</p>
+          <div class="form group">
+            <label for="name">Name*</label>
+            <input [ngClass]="{'error': !isValidName || isExist}" type="text" name="name" id="name" class="form-control" [(ngModel)]="data.name">
+            <p [hidden]="isValidName || isExist" style="color: #a94442;">Product Name is mandatory</p>
+          </div><br>
+          <div class="form group">
+            <label for="type">Category*</label>
+            <select class="form-control" name="type" id="type" required [(ngModel)]='data.category'>
+              <option class='option' *ngFor='let tl of typeList' [value]="tl">{{tl}}</option>
+            </select>
+          </div><br>
+          <div class="form group">
+            <label for="status">Status*</label><br>
+            <input type="radio" name="status" value="Available" [(ngModel)]="data.status">&nbsp;&nbsp;&nbsp;&nbsp;Available<br>
+            <input type="radio" name="status" value="Unavailable" [(ngModel)]="data.status">&nbsp;&nbsp;&nbsp;&nbsp;Unavailable
+          </div><br>
+          <div class="form group">
+            <label for="imageUrl">Image*</label><br>
+            <input [ngClass]="{'error': !isValidImgUrl}" type="text" name="imageUrl"  id="imageUrl" class="form-control" [(ngModel)]="data.imgUrl">
+            <p [hidden]="isValidImgUrl" style="color: #a94442;">Please select product image</p>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="col-md-12 text-right">
+      <input type="submit" class="btn btn-success" type="submit"><br>
+    </div>
+  </form>
+</div>

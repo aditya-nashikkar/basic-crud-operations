@@ -1,0 +1,158 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Strawberry",
+      "category": "Fruits",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/89778/strawberries-frisch-ripe-sweet-89778.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 2,
+      "name": "Capsicum",
+      "category": "Vegetables",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/186840/pexels-photo-186840.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 3,
+      "name": "Garlic",
+      "category": "Vegetables",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/928251/pexels-photo-928251.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 4,
+      "name": "Tomato",
+      "category": "Vegetables",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/373019/pexels-photo-373019.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 5,
+      "name": "Potato",
+      "category": "Vegetables",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/162673/potatoes-vegetables-erdfrucht-bio-162673.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 6,
+      "name": "Peaches",
+      "category": "Fruits",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/42218/food-fresh-fruit-isolated-42218.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 7,
+      "name": "Kiwi",
+      "category": "Fruits",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/54370/pexels-photo-54370.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 8,
+      "name": "Apple",
+      "category": "Fruits",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/62687/nice-apples-green-eating-healthy-healthy-food-62687.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 9,
+      "name": "Avocados",
+      "category": "Fruits",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 10,
+      "name": "Cinnamon",
+      "category": "Seasoning",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/71128/cinnamon-cinnamon-stick-rod-kitchen-71128.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 11,
+      "name": "Anise",
+      "category": "Seasoning",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/753725/pexels-photo-753725.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "name": "Pineapple",
+      "category": "Fruits",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/165776/pexels-photo-165776.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "id": 12
+    },
+    {
+      "id": 13,
+      "name": "Spinach",
+      "category": "Vegetables",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/1213859/pexels-photo-1213859.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "name": "Corn",
+      "category": "Vegetables",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/209389/pexels-photo-209389.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "id": 14
+    },
+    {
+      "id": 16,
+      "name": "Cumin Seeds",
+      "category": "Seasoning",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/39073/spices-caraway-garden-eat-39073.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "name": "Green Grapes",
+      "category": "Fruits",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/60021/grapes-wine-fruit-vines-60021.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "id": 17
+    },
+    {
+      "id": 18,
+      "name": "Red Chilli",
+      "category": "Vegetables",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/1091778/pexels-photo-1091778.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 19,
+      "name": "Banana",
+      "category": "Fruits",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/461208/pexels-photo-461208.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "id": 22,
+      "name": "Apricot",
+      "category": "Fruits",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/1028599/pexels-photo-1028599.jpeg?auto=compress&cs=tinysrgb&h=350"
+    },
+    {
+      "name": "Raspberry",
+      "category": "Fruits",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/302478/pexels-photo-302478.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "id": 24
+    },
+    {
+      "name": "Cherries",
+      "category": "Fruits",
+      "status": "Available",
+      "imgUrl": "https://images.pexels.com/photos/1178610/pexels-photo-1178610.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "id": 25
+    },
+    {
+      "id": 26,
+      "name": "Pumpkin",
+      "category": "Vegetables",
+      "status": "Unavailable",
+      "imgUrl": "https://images.pexels.com/photos/633480/pexels-photo-633480.jpeg?auto=compress&cs=tinysrgb&h=350"
+    }
+  ]
+}
