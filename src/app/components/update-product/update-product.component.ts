@@ -48,7 +48,7 @@ export class UpdateProductComponent implements OnInit {
       this.isExist = false;
     } 
     
-    if(product.imageUrl === '' || product.imageUrl == null || product.imageUrl == ' ') {
+    else if(product.imageUrl === '' || product.imageUrl == null || product.imageUrl == ' ') {
       this.isValidImgUrl = false;
     }
 
