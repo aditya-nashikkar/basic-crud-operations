@@ -37,8 +37,6 @@ export class OperationsComponent implements OnInit {
       "imgUrl": product.imageUrl
     }
 
-    console.log(product.status);
-
     this.isExist = false;
     this.isValidName = true;
     this.isValidCategory = true;
@@ -46,7 +44,6 @@ export class OperationsComponent implements OnInit {
     this.isValidImgUrl = true;
 
     if(product.name === '' || product.name == null || product.name == ' ') {
-      console.log("Empty");
       this.isValidName = false;
       this.isExist = false;
     } 
@@ -71,15 +68,12 @@ export class OperationsComponent implements OnInit {
             this.isValidName = true;
           }
         }
-        console.log(this.flag);
         if (this.flag == true)
           this.isExist = true;
         else {
           this._productService.createProduct(this.productObj).subscribe((data)=>{
-          console.log(data);
           this._router.navigate(['/']);
           },(error)=>{
-            console.log(error);
         });
         }    
         this.flag = false;
@@ -90,12 +84,10 @@ export class OperationsComponent implements OnInit {
   
     this._route.params.subscribe(params => {
       this.fetchId = +params['id'];
-      console.log(this.fetchId);
     });
 
     this._productService.getSearchedProducts().subscribe((serverData)=>{
       this.products = serverData;
-      console.log(this.products);
     })  
     
   }  

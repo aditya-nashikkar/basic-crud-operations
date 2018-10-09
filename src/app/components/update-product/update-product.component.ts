@@ -40,10 +40,7 @@ export class UpdateProductComponent implements OnInit {
     this.isValidStatus = true;
     this.isValidImgUrl = true;
 
-    console.log(product.name);
-
     if(product.name === '' || product.name === null || product.name === ' ') {
-      console.log("Empty");
       this.isValidName = false;
       this.isExist = false;
     } 
@@ -56,22 +53,16 @@ export class UpdateProductComponent implements OnInit {
       for(let i=0; i<this.products.length; i++) {
         let productName = this.products[i].name;
         if(productName.toLowerCase() === product.name.toLowerCase()) {
-          console.log(productName);
-          console.log(product.name);
           this.flag = true;
         }
       }
-  
-      console.log(this.flag);
-  
+
       if (this.flag == true)
           this.isExist = true;
       else {
         this._productService.updateProduct(this.productObj).subscribe((data)=>{
-          console.log(data);
           this._router.navigate(['/']);
         },(error)=>{
-            console.log(error);
         });
       }
     
@@ -92,9 +83,6 @@ export class UpdateProductComponent implements OnInit {
 
     this._productService.getSearchedProducts().subscribe((serverData)=>{
       this.allProducts = serverData;
-      // console.log("-------------------");
-      // console.log(this.allProducts);
-      // console.log("-------------------");
     })
 
     this._productService.getSearchedProducts().subscribe((serverData)=>{
@@ -104,10 +92,6 @@ export class UpdateProductComponent implements OnInit {
           this.data = this.products[i];
           this.currentProduct = this.data['name'];
           this.products.splice(i-1, 1);
-          console.log(this.products.splice(i-1, 1));
-          console.log(this.products);
-          console.log(this.currentProduct);
-          console.log(this.data['name']); 
           break;
         }
       }
