@@ -37,11 +37,8 @@ export class ListProductsComponent implements OnInit {
   getProductsByPage(page:number, sort:string, orderType:string) {
     this._productService.getProducts(page, sort, orderType).subscribe((data)=>{
       this.filteredProducts = this.products  = data;
-      console.log(this.products);
-      console.log(this.products.length);
       this.isFilterOn = false;
     },(error)=>{
-      console.log(error);
       this.isFilterOn = false;
     });
   }
@@ -51,10 +48,8 @@ export class ListProductsComponent implements OnInit {
       this.allProductsLength = new Array(Math.ceil(data.length/5));
       this.totalPageNumber = data.length;
       this.totalPagination = Math.ceil(this.totalPageNumber/5);
-      console.log(this.allProductsLength);
       this.isFilterOn = false;
     },(error)=>{
-      console.log(error);
       this.isFilterOn = false;
     });
   }
@@ -62,12 +57,9 @@ export class ListProductsComponent implements OnInit {
   deleteProduct(product) {
     this.isFilterOn = false;
     this.currentPage = this.page;
-    console.log(this.currentPage);
     this._productService.deleteProduct(product.id).subscribe((data)=>{
     this.filteredProducts.splice(this.filteredProducts.indexOf(product),1)
-    console.log(this.filteredProducts.length);
     if(this.filteredProducts.length == 0) {
-      console.log("Apple");
       this.getTotalNumberOfProducts();
       this.getProductsByPage(1,this.sortType,this.orderType);  
       this.page = 1;
@@ -78,16 +70,9 @@ export class ListProductsComponent implements OnInit {
       
     }
     },(error)=>{
-      console.log(error);
       this.isFilterOn = false;
     });
   }
-
-
-
-  // updateProduct(product) {
-  //   this._router.navigate(['/operation'], );
-  // }
 
   filter(query:string) {
     this.isFilterOn = true;
@@ -101,14 +86,12 @@ export class ListProductsComponent implements OnInit {
       ) :  
       this.getProductsByPage(1, this.sortType,this.orderType);
     },(error)=>{
-      console.log(error);
     });
   }
   
   setLastPageIndex() {
     this.isFilterOn = false;
     this.page = Math.ceil(this.totalPageNumber/5);
-    console.log(this.page);
     this.getProductsByPage(this.page, this.sortType,this.orderType);
   }
 
@@ -154,12 +137,10 @@ export class ListProductsComponent implements OnInit {
       this.orderType = 'asc'; 
       this.sortIconName = "fa fa-sort-up";
       this.getProductsByPage(this.page, this.sortType,this.orderType);
-      console.log(this.orderType);
     } else {
       this.orderType = 'desc';
       this.sortIconName = "fa fa-sort-down";
       this.getProductsByPage(this.page, this.sortType,this.orderType);
-      console.log(this.orderType);
     }
   }
   
@@ -172,12 +153,10 @@ export class ListProductsComponent implements OnInit {
       this.orderType = 'asc'; 
       this.getProductsByPage(this.page, this.sortType,this.orderType);
       this.sortIconCategory = "fa fa-sort-up";
-      console.log(this.orderType);
     } else {
       this.orderType = 'desc';
       this.sortIconCategory = "fa fa-sort-down";
       this.getProductsByPage(this.page, this.sortType,this.orderType);
-      console.log(this.orderType);
     }
   }
 
@@ -190,12 +169,10 @@ export class ListProductsComponent implements OnInit {
       this.orderType = 'asc'; 
       this.getProductsByPage(this.page, this.sortType,this.orderType);
       this.sortIconStatus = "fa fa-sort-up";
-      console.log(this.orderType);
     } else {
       this.orderType = 'desc';
       this.sortIconStatus = "fa fa-sort-down";
       this.getProductsByPage(this.page, this.sortType,this.orderType);
-      console.log(this.orderType);
     }
   }
   
